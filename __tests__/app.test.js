@@ -60,14 +60,14 @@ describe('lazy-bouncer routes', () => {
     });
   });
 
-  // it('should return a 401 when signed out and listing all users', async () => {
-  //   const res = await request(app).get('/api/v1/users');
+  it('should return a 401 when signed out and listing all users', async () => {
+    const res = await request(app).get('/api/v1/users');
 
-  //   expect(res.body).toEqual({
-  //     message: 'You must be signed in to continue',
-  //     status: 401,
-  //   });
-  // });
+    expect(res.body).toEqual({
+      message: 'You must be signed in to continue',
+      status: 401,
+    });
+  });
 
   // it('should return a 403 when signed in but not admin and listing all users', async () => {
   //   const [agent] = await registerAndLogin();
